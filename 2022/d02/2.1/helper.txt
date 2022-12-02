@@ -1,0 +1,24 @@
+AX rock
+BY paper
+CZ scissors
+
+X 1
+Y 2
+Z 3
+
+A X -> tie
+A Y -> win
+A Z -> lose
+
+B X -> lose
+B Y -> tie
+B Z -> win
+
+C X -> win
+C Y -> lose
+C Z -> tie
+
+pt2:
+X -> lose
+Y -> tie
+Z -> win
