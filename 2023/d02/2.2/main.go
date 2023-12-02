@@ -24,7 +24,6 @@ func solve(data string) {
 
 	for _, game := range strings.Split(data, "\n") {
 		parts := strings.Split(game, ":")
-		// gameNum, _ := strconv.Atoi(string(strings.Split(parts[0], " ")[1]))
 		data := parts[1]
 		rounds := strings.Split(data, ";")
 		maximums := map[string]int{"red": 0, "green": 0, "blue": 0}
@@ -45,7 +44,6 @@ func solve(data string) {
 		}
 
 		sum += maximums["red"] * maximums["green"] * maximums["blue"]
-		// fmt.Println(gameNum, possible, "data: ", data, sum)
 	}
 
 	fmt.Println(sum)
