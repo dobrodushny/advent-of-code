@@ -16,3 +16,34 @@ func ToIntSlice(str_slice []string) []int {
 
 	return int_slice
 }
+
+func Intersect[T comparable](s1, s2 []T) []T {
+	var result []T
+	set := make(map[T]bool)
+
+	for _, el := range s1 {
+		if !set[el] {
+			set[el] = true
+		}
+	}
+
+	for _, el := range s2 {
+		if set[el] {
+			result = append(result, el)
+		}
+	}
+
+	return result
+}
+
+func removeDuplicate[T string | int](sliceList []T) []T {
+	allKeys := make(map[T]bool)
+	list := []T{}
+	for _, item := range sliceList {
+		if _, value := allKeys[item]; !value {
+			allKeys[item] = true
+			list = append(list, item)
+		}
+	}
+	return list
+}
