@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -18,3 +19,8 @@ func main() {
 }
 
 func solve(data string) {}
+
+func Atoi(s string) int {
+	v, _ := strconv.Atoi(s)
+	return v
+}

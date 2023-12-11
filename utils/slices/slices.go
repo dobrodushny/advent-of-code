@@ -36,7 +36,7 @@ func Intersect[T comparable](s1, s2 []T) []T {
 	return result
 }
 
-func removeDuplicate[T string | int](sliceList []T) []T {
+func RemoveDuplicate[T string | int](sliceList []T) []T {
 	allKeys := make(map[T]bool)
 	list := []T{}
 	for _, item := range sliceList {
