@@ -1,26 +1,21 @@
 package main
 
 import (
-	"log"
-	"os"
-	"strconv"
+	"advent-of-code/utils"
+	"flag"
+	"fmt"
 	"strings"
-	"time"
 )
 
 func main() {
-	file, _ := os.ReadFile("../input.txt")
-	data := strings.TrimRight(string(file), "\n")
+	isSample := flag.Bool("s", false, "read sample")
+	flag.Parse()
 
-	now := time.Now()
-	solve(data)
-	elapsed := time.Since(now)
-	log.Printf("Took %s", elapsed)
+	utils.Run(solve, utils.ReadInput(*isSample))
 }
 
-func solve(data string) {}
-
-func Atoi(s string) int {
-	v, _ := strconv.Atoi(s)
-	return v
+func solve(data string) {
+	for _, row := range strings.Split(data, "\n") {
+		fmt.Println(row)
+	}
 }

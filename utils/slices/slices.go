@@ -1,17 +1,15 @@
 package slices
 
 import (
-	"strconv"
+	"advent-of-code/utils"
 	"strings"
 )
 
-func ToIntSlice(str_slice []string) []int {
+func StringToIntSlice(str string) []int {
 	var int_slice []int
-	for _, str := range str_slice {
-		for _, v := range strings.Fields(str) {
-			int_v, _ := strconv.Atoi(v)
-			int_slice = append(int_slice, int_v)
-		}
+
+	for _, v := range strings.Fields(str) {
+		int_slice = append(int_slice, utils.Atoi(v))
 	}
 
 	return int_slice
@@ -46,4 +44,17 @@ func RemoveDuplicate[T string | int](sliceList []T) []T {
 		}
 	}
 	return list
+}
+
+// Deprecated: do not use as the signature is confusing
+func ToIntSlice(str_slice []string) []int {
+	var int_slice []int
+
+	for _, str := range str_slice {
+		for _, v := range strings.Fields(str) {
+			int_slice = append(int_slice, utils.Atoi(v))
+		}
+	}
+
+	return int_slice
 }
