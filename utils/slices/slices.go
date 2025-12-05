@@ -58,3 +58,7 @@ func ToIntSlice(str_slice []string) []int {
 
 	return int_slice
 }
+
+func RemoveAt[T comparable](slice []T, i int) []T {
+	return append(slice[:i], slice[i+1:]...)
+}

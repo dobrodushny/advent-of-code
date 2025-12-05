@@ -32,6 +32,11 @@ func Atoi(s string) int {
 	return v
 }
 
+func Atoi64(s string) int64 {
+	v, _ := strconv.ParseInt(s, 10, 64)
+	return v
+}
+
 func ReadInput(isSample bool) string {
 	var file []byte
 
